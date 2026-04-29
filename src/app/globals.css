@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --bg: 0 0% 3%;
+  --panel: 0 0% 7%;
+  --panel2: 0 0% 10%;
+  --text: 0 0% 96%;
+  --muted: 0 0% 72%;
+  --yellow: 48 100% 55%;
+  --yellow2: 48 100% 62%;
+  --danger: 0 83% 62%;
+  --ok: 142 72% 45%;
+  --cyan: 188 100% 50%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(1200px 600px at 20% 0%, hsla(var(--yellow) / 0.12), transparent 60%),
+    radial-gradient(900px 700px at 90% 20%, hsla(var(--cyan) / 0.10), transparent 55%),
+    radial-gradient(800px 600px at 60% 110%, hsla(var(--yellow2) / 0.08), transparent 60%),
+    hsl(var(--bg));
+  color: hsl(var(--text));
+  font-feature-settings: "ss01" on, "ss02" on, "cv01" on;
+  letter-spacing: 0.01em;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsla(var(--yellow) / 0.35) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsla(var(--yellow) / 0.55), hsla(var(--cyan) / 0.35));
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.glass {
+  background: linear-gradient(180deg, hsla(0 0% 100% / 0.08), hsla(0 0% 100% / 0.04));
+  border: 1px solid hsla(var(--yellow) / 0.16);
+  box-shadow: 0 0 0 1px hsla(0 0% 100% / 0.03) inset,
+    0 25px 80px hsla(0 0% 0% / 0.55),
+    0 0 60px hsla(var(--yellow) / 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.neon-ring {
+  box-shadow: 0 0 0 1px hsla(var(--yellow) / 0.25) inset,
+    0 0 0 1px hsla(0 0% 100% / 0.03),
+    0 0 24px hsla(var(--yellow) / 0.16),
+    0 0 48px hsla(var(--cyan) / 0.08);
+}
+
+.gridlines {
+  background-image: linear-gradient(hsla(0 0% 100% / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, hsla(0 0% 100% / 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at 50% 40%, black 45%, transparent 75%);
+}
+
+.text-glow {
+  text-shadow: 0 0 14px hsla(var(--yellow) / 0.25);
+}
