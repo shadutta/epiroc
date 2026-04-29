@@ -626,9 +626,9 @@ export default function Page() {
                       border: "1px solid hsla(var(--yellow)/0.22)",
                       borderRadius: 12
                     }}
-                    formatter={(value: unknown, name: unknown, props: any) => {
-                      if (name === "zone") return [value, "Zone"];
-                      return [value, name];
+                    formatter={(value, name) => {
+                      const label = name === "zone" ? "Zone" : String(name);
+                      return [value as any, label] as [any, string];
                     }}
                     labelFormatter={() => ""}
                   />
